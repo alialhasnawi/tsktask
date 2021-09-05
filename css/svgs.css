@@ -1,0 +1,39 @@
+.button-dimensions {
+    width: 48px;
+    height: 48px;
+
+    padding: 8px;
+}
+
+.button-highlight svg path {
+    fill: var(--grey-blue) !important;
+}
+
+.button-highlight:hover svg path {
+    fill: var(--mid-blue) !important;
+}
+.button-highlight:active svg path {
+    fill: var(--dark-blue) !important;
+}
+
+.button-highlight:hover {
+    cursor: pointer;
+}
+
+.button-highlight {
+    border-radius: 8px;
+}
+
+.button-highlight:hover {
+    background-color: var(--clear-blue);
+}
+
+.button-highlight:active {
+    background-color: var(--light-blue);
+}
+
+
+.button-bigger {
+    width: 56px;
+    height: 56px;
+}

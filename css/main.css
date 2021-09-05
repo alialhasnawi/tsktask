@@ -1,0 +1,106 @@
+/*
+CSS Style Template
+
+selector {
+    dimension props;
+
+    layout and flow props;
+
+    margin, padding, border props;
+
+    color and font props;
+}
+*/
+
+* {
+    box-sizing: border-box !important;
+}
+
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+
+    --obscuring-grey: #63636386;
+    --clear-blue: #dff3ff;
+    --light-blue: #97cae7;
+    --mid-blue: #54b5db;
+    --dark-blue: #007cc4;
+    --grey-blue: #c8d1d6;
+    --dark-grey-blue: #757b7e;
+    --error-red: #c41f1f;
+    --light-red: #f38181;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+}
+
+/*** HEADER NAV ***/
+
+header {
+    width: 100vw;
+    
+    display: grid;
+    place-items: center;
+    grid-template-columns: [clock] auto [add] 7vh [clear] 7vh;
+
+    padding: 2vh;
+
+    border-bottom: 4px solid var(--light-blue);
+
+    box-shadow: 0px 0px 16px 8px var(--clear-blue);
+}
+
+.nav-clock {
+    grid-column: clock;
+    place-self: start;
+
+    font-size: 5vh;
+    font-weight: 600;
+    color: var(--dark-blue);
+}
+
+.nav-add {
+    grid-column: add;
+}
+
+.nav-clear {
+    grid-column: clear;
+}
+
+/*** MAIN TASKS ***/
+
+main {
+    width: 96vw;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 32px;
+    overflow-y: scroll;
+}
+
+main::before {
+    content: "There's nothing here...";
+
+    position: absolute;
+    
+    padding-top: 16px;
+    z-index: -100;
+
+    font-size: 16px;
+    color: var(--grey-blue);
+}
