@@ -154,7 +154,12 @@ export class TaskManager extends El {
      * @param {Task} task task to be edited. Open up creation menu if task not provided.
      */
     popup_edit_task(task = undefined) {
-        const in_date = new DateInput(task ? task.start_time : undefined);
+        let last_task = this.__first_task;
+
+        if (last_task)
+            while (last_task.next) last_task = last_task.next;
+
+        const in_date = new DateInput(task ? task.start_time : (last_task ? last_task.end_time : undefined));
         const in_duration = new DurationInput(task ? task.duration : undefined);
         const in_name = x('input', { className: 'textinput-selector task-create-centred', value: task ? task.name : '', placeholder: 'description', type: 'text' });
         const out_submit = x('div', {
